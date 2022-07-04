@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.7.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id "org.flywaydb.flyway" version "8.5.13"
 	id 'java'
 }
 
@@ -33,4 +34,11 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+flyway {
+	url = 'jdbc:postgresql://localhost:15432/postgres'
+	user = 'postgres'
+	password = 'postgres'
+	defaultSchema = 'public'
 }
