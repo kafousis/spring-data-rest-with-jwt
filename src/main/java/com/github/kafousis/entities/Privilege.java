@@ -5,10 +5,6 @@ import lombok.experimental.Accessors;
 import com.github.kafousis.enums.PrivilegeCategory;
 
 import javax.persistence.*;
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -22,11 +18,9 @@ public class Privilege {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Privilege name cannot be blank.")
     @Column(nullable = false, unique = true)
     private String name;
 
-    @NotNull(message = "Privilege category cannot be null.")
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PrivilegeCategory category;
