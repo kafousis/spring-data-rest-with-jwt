@@ -10,6 +10,7 @@ Spring Boot project that shows how to build and secure a RESTful API using Sprin
 - Spring Data REST
 - Spring Security
 - Json Web Tokens 
+- Springdoc-OpenAPI
 
 ## PostgreSQL
 You can either use a local PostgreSQL instance running on your computer, or use the provided docker-compose.yaml file to create new instances of PostgreSQL and pgAdmin using Docker. 

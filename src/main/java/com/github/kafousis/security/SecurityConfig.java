@@ -19,6 +19,21 @@ import static org.springframework.http.HttpMethod.*;
 @EnableWebSecurity
 public class SecurityConfig {
 
+    private static final String[] AUTH_WHITELIST = {
+            // -- Swagger UI v2
+            "/v2/api-docs",
+            "/swagger-resources",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**",
+            // -- Swagger UI v3 (OpenAPI)
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            // other public endpoints of your API may be appended to this array
+    };
+
     // default authentication manager created by spring security
     // picks up userDetailsService and passwordEncoder automatically
     // as long as they are registered as Beans
@@ -47,6 +62,7 @@ public class SecurityConfig {
                 .csrf().disable()
 
                 .authorizeRequests()
+                    .antMatchers(AUTH_WHITELIST).permitAll()
                     .antMatchers(GET, "/api/privileges", "/api/privileges/**").hasAnyRole("ADMIN", "MANAGER")
                     .antMatchers(POST, "/api/privileges").hasRole("ADMIN")
                     .antMatchers(PUT, "/api//privileges/*", "/api/privileges/**").hasRole("ADMIN")
