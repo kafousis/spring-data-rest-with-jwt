@@ -31,6 +31,6 @@ public class Role {
     private Set<Privilege> privileges = new HashSet<>();
 
     @EqualsAndHashCode.Exclude
-    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "role")
     private Set<User> users = new HashSet<>();
 }
