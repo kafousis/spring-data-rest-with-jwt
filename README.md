@@ -30,10 +30,17 @@ The inserted data include 3 users:
 - username: manager, pass: manager
 - username: user, pass: user
 
-## Run project using Gradle Wrapper
+## Run project
 ```shell
 ./gradlew bootRun
 ```
+
+## Swagger UI
+Swagger UI is a user interface based on the OpenAPI specification which allows anyone to see available API endpoints and interact with them, along with API documentation.
+
+After you run the project, the Swagger UI page will be available at:
+
+> http://localhost:8080/swagger-ui.html
 
 ## Example cURL requests
 

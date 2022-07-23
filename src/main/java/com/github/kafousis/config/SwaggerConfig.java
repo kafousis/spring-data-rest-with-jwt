@@ -23,7 +23,7 @@ public class SwaggerConfig {
     // https://www.baeldung.com/openapi-jwt-authentication
 
     @Bean
-    public OpenAPI springShopOpenAPI() {
+    public OpenAPI openAPI() {
 
         final String securitySchemeName = "bearerAuth";
 
